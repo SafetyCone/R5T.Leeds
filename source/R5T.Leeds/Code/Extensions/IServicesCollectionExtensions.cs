@@ -2,6 +2,9 @@
 
 using Microsoft.Extensions.DependencyInjection;
 
+using R5T.Hastings.Default;
+using R5T.Macommania;
+using R5T.Macommania.Default;
 using R5T.Scotia.Extensions;
 using R5T.Suebia;
 using R5T.Suebia.Alamania;
@@ -18,6 +21,9 @@ namespace R5T.Leeds
             services
                 .AddAlamaniaSecretsDirectoyPathProviderServiceDependencies()
                 .AddSingleton<AlamaniaSecretsDirectoryPathProvider>() // Add service directly since it is consumed directly, instead of through the ISecretsDirectoryPathProvider interface.
+                .UseDefaultMachineLocationProvider()
+                .AddSingleton<IExecutableFilePathProvider, DefaultExecutableFilePathProvider>()
+                .AddSingleton<IExecutableFileDirectoryPathProvider, DefaultExecutableFileDirectoryPathProvider>()
                 .AddSingleton<ISecretsDirectoryPathProvider, MachineLocationAwareSecretsDirectoryPathProvider>()
                 .AddSingleton<ISecretsFilePathProvider, DefaultSecretsFilePathProvider>()
                 ;
