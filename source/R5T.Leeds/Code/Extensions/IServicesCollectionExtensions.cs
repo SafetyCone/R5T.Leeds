@@ -25,7 +25,7 @@ namespace R5T.Leeds
                 .AddSingleton<IExecutableFilePathProvider, DefaultExecutableFilePathProvider>()
                 .AddSingleton<IExecutableFileDirectoryPathProvider, DefaultExecutableFileDirectoryPathProvider>()
                 .AddSingleton<ISecretsDirectoryPathProvider, MachineLocationAwareSecretsDirectoryPathProvider>()
-                .AddSingleton<ISecretsFilePathProvider, DefaultSecretsFilePathProvider>()
+                .AddSingleton<ISecretsDirectoryFilePathProvider, DefaultSecretsDirectoryFilePathProvider>()
                 ;
 
             return services;
