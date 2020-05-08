@@ -22,8 +22,8 @@ namespace R5T.Leeds
                 .AddAlamaniaSecretsDirectoyPathProviderServiceDependencies()
                 .AddSingleton<AlamaniaSecretsDirectoryPathProvider>() // Add service directly since it is consumed directly, instead of through the ISecretsDirectoryPathProvider interface.
                 .UseDefaultMachineLocationProvider()
-                .AddSingleton<IExecutableFilePathProvider, DefaultExecutableFilePathProvider>()
-                .AddSingleton<IExecutableFileDirectoryPathProvider, DefaultExecutableFileDirectoryPathProvider>()
+                .AddSingleton<IExecutableFilePathProvider, ExecutableFilePathProvider>()
+                .AddSingleton<IExecutableFileDirectoryPathProvider, ExecutableFileDirectoryPathProvider>()
                 .AddSingleton<ISecretsDirectoryPathProvider, MachineLocationAwareSecretsDirectoryPathProvider>()
                 .AddSingleton<ISecretsDirectoryFilePathProvider, DefaultSecretsDirectoryFilePathProvider>()
                 ;
