@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 using R5T.Suebia;
+using R5T.Suebia.Hastings;
 
 
 namespace R5T.Leeds.Construction
@@ -34,7 +35,7 @@ namespace R5T.Leeds.Construction
 
             var serviceProvider = new ServiceCollection()
                 .AddSingleton<IConfiguration>(configuration)
-                .UseMachineLocationAwareCustomSecretsDirectoryPath()
+                .AddMachineLocationAwareSecretsDirectoryPathProvider()
                 .BuildServiceProvider();
 
             return serviceProvider;
